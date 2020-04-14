@@ -1,0 +1,24 @@
+[submodule "Plugins/DDTools"]
+	path = Plugins/DDTools
+	url = https://github.com/remap/DDTools.git
+[submodule "Plugins/highCastleProjection"]
+	path = Plugins/highCastleProjection
+	url = https://github.com/reynbows/highCastleProjection.git
+[submodule "Plugins/PlaybackCtrl"]
+	path = Plugins/PlaybackCtrl
+	url = https://github.com/bsubbaraman/PlaybackCtrl.git
+[submodule "Plugins/OSC"]
+	path = Plugins/OSC
+	url = https://github.com/bsubbaraman/UE4-OSC.git
+[submodule "Plugins/Fsound"]
+	path = Plugins/Fsound
+	url = https://github.com/wzq94qzw/GrasshopperSoundPlugin.git
+[submodule "Plugins/FMOD"]
+	path = Plugins/FMOD
+	url = https://github.com/wzq94qzw/GrasshopperFmod.git
+[submodule "Plugins/EditorTools"]
+	path = Plugins/EditorTools
+	url = https://github.com/daricalouie/UE4_EditorTools/
+[submodule "Plugins/FiducialRelocalizer"]
+	path = Plugins/FiducialRelocalizer
+	url = https://github.com/remap/FiducialRelocalizer.git
