@@ -75,3 +75,5 @@ DerivedDataCache/*
 Packaged
 
 git-describe.h
+
+WindowsNoEditor/*
