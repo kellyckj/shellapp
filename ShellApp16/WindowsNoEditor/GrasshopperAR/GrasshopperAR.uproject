@@ -1,0 +1,87 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "4.23",
+	"Category": "",
+	"Description": "",
+	"Enterprise": true,
+	"Modules": [
+		{
+			"Name": "GrasshopperAR",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine",
+				"UMG",
+				"CoreUObject"
+			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "DDTools",
+			"Enabled": true
+		},
+		{
+			"Name": "PlaybackCtrl",
+			"Enabled": true
+		},
+		{
+			"Name": "highCastlePD",
+			"Enabled": true
+		},
+		{
+			"Name": "FMODStudio",
+			"Enabled": false
+		},
+		{
+			"Name": "Fsound",
+			"Enabled": false
+		},
+		{
+			"Name": "AppleARKit",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"IOS"
+			]
+		},
+		{
+			"Name": "AppleARKitFaceSupport",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"IOS"
+			]
+		},
+		{
+			"Name": "GoogleARCore",
+			"Enabled": true,
+			"SupportedTargetPlatforms": [
+				"Android"
+			]
+		},
+		{
+			"Name": "EditorTools",
+			"Enabled": true
+		},
+		{
+			"Name": "FiducialRelocalizer",
+			"Enabled": true
+		}
+	],
+	"PreBuildSteps":
+	{
+		"Mac": [
+			"cd `dirname $(ProjectFile)` && export GIT_BRANCH=`git rev-parse --abbrev-ref HEAD`",
+			"cd `dirname $(ProjectFile)` && echo \"#define GIT_BRANCH ${GIT_BRANCH}\" > Source/GrasshopperAR/Private/git-describe.h",
+			"cd `dirname $(ProjectFile)` && export GIT_DESCRIBE=`git describe --always --dirty` && echo \"GrasshopperAR code version ${GIT_DESCRIBE}\"",
+			"cd `dirname $(ProjectFile)` && echo \"#define GIT_DESCRIBE ${GIT_DESCRIBE}\" >> Source/GrasshopperAR/Private/git-describe.h"
+		],
+		"Win64": [
+			"for %%F in ($(ProjectFile)) do set ProjectDir=%%~dpF && cd /d $(ProjectDir)",
+			"git rev-parse --abbrev-ref HEAD > git-branch.tmp && set /p GIT_BRANCH= < git-branch.tmp",
+			"git describe --always --dirty > git-describe.tmp && set /p GIT_DESCRIBE= < git-describe.tmp",
+			"echo #define GIT_BRANCH %GIT_BRANCH% > Source/GrasshopperAR/Private/git-describe.h",
+			"echo #define GIT_DESCRIBE %GIT_DESCRIBE% >> Source/GrasshopperAR/Private/git-describe.h",
+			"del git-branch.tmp && del git-describe.tmp"
+		]
+	}
+}

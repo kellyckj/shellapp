@@ -1,0 +1,45 @@
+{
+	"FileVersion" : 1,
+	"Version" : 1,
+	"VersionName" : "1.0",
+	"FriendlyName" : "Polygon Editing",
+	"Description" : "StaticMesh Editor's Extension",
+	"Category" : "Editor",
+	"CreatedBy" : "Epic Games, Inc.",
+	"CreatedByURL" : "http://epicgames.com",
+	"DocsURL" : "",
+	"MarketplaceURL" : "",
+	"SupportURL" : "",
+	"EnabledByDefault" : true,
+	"CanContainContent" : true,
+	"IsBetaVersion" : true,
+	"Installed" : false,
+	"Modules" :
+	[
+		{
+			"Name" : "StaticMeshEditorExtension",
+			"Type" : "Editor",
+			"LoadingPhase" : "Default"
+		},
+		{
+			"Name" : "MeshProcessingLibrary",
+			"Type" : "Editor",
+			"LoadingPhase" : "Default",
+			"WhitelistPlatforms": [ "Win64" ]
+		},
+	],
+	"Plugins": [
+		{
+			"Name": "EditableMesh",
+			"Enabled": true
+		},
+		{
+			"Name": "MeshEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "ProxyLODPlugin",
+			"Enabled": true
+		}
+	]
+}
